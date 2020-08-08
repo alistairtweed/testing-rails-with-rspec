@@ -1,4 +1,6 @@
-# Testing Rails with Capybara, RSpec, Factory Bot, Faker and Shoulda Matchers
+# Testing Rails with RSpec
+
+A reference for testing Rails applications with RSpec, Capybara, Factory Bot, Faker and Shoulda Matchers.
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -76,7 +78,7 @@ bundle exec rspec spec/models/post_spec.rb:8
 
 ### Faker
 
-[Fake Generators](https://github.com/faker-ruby/faker#generators)
+[Faker Generators](https://github.com/faker-ruby/faker#generators)
 
 ```ruby
 Faker::Name.name
@@ -900,6 +902,8 @@ follow_redirect!
 
 [Channel specs documentation](https://relishapp.com/rspec/rspec-rails/v/4-0/docs/channel-specs/channel-spec)
 
+#### Generator
+
 ```
 rails generate rspec:channel NAME [options]
 ```
@@ -907,6 +911,8 @@ rails generate rspec:channel NAME [options]
 ### Controller Specs
 
 [Controller specs documentation](https://relishapp.com/rspec/rspec-rails/docs/controller-specs)
+
+#### Generator
 
 ```
 rails generate rspec:controller NAME [action action] [options]
@@ -920,6 +926,8 @@ rails generate rspec:controller NAME [action action] [options]
 
 > the RSpec team now officially recommends system specs
 
+#### Generator
+
 ```
 rails generate rspec:feature NAME [options]
 ```
@@ -927,6 +935,8 @@ rails generate rspec:feature NAME [options]
 ### Generator Specs
 
 [Generator specs documentation](https://relishapp.com/rspec/rspec-rails/v/4-0/docs/generator-specs/generator-spec)
+
+#### Generator
 
 ```
 rails generate rspec:generator NAME [options]
@@ -936,11 +946,15 @@ rails generate rspec:generator NAME [options]
 
 [Helper specs documentation](https://relishapp.com/rspec/rspec-rails/docs/helper-specs/helper-spec)
 
+#### Generator
+
 ```
 rails generate rspec:helper NAME [options]
 ```
 
 ### Integration Specs
+
+#### Generator
 
 ```
 rails generate rspec:integration NAME [options]
@@ -950,6 +964,8 @@ rails generate rspec:integration NAME [options]
 
 [Job specs documentation](https://relishapp.com/rspec/rspec-rails/docs/job-specs/job-spec)
 
+#### Generator
+
 ```
 rails generate rspec:job NAME [options]
 ```
@@ -957,6 +973,8 @@ rails generate rspec:job NAME [options]
 ### Mailbox Specs
 
 [Mailbox specs documentation](https://relishapp.com/rspec/rspec-rails/v/4-0/docs/mailbox-specs/action-mailbox-spec)
+
+#### Generator
 
 ```
 rails generate rspec:mailbox NAME [options]
@@ -966,6 +984,8 @@ rails generate rspec:mailbox NAME [options]
 
 [Mailer specs documentation](https://relishapp.com/rspec/rspec-rails/docs/mailer-specs)
 
+#### Generator
+
 ```
 rails generate rspec:mailer NAME [method method] [options]
 ```
@@ -973,6 +993,8 @@ rails generate rspec:mailer NAME [method method] [options]
 ### Model Specs
 
 [Model specs documentation](https://relishapp.com/rspec/rspec-rails/docs/model-specs)
+
+#### Generator
 
 ```
 rails generate rspec:model NAME [field:type field:type] [options]
@@ -986,6 +1008,8 @@ rails generate rspec:model NAME [field:type field:type] [options]
 
 > When writing them, try to answer the question, “For a given HTTP request (verb + path + parameters), what HTTP response should the application return?”
 
+#### Generator
+
 ```
 rails generate rspec:request NAME [options]
 ```
@@ -998,13 +1022,15 @@ rails generate rspec:request NAME [options]
 
 [Routing specs documentation](https://relishapp.com/rspec/rspec-rails/docs/routing-specs)
 
-**Note:** There is no generator for routing specs, but they can be generated using other generators (e.g. `rspec:scaffold`)
-
 Routing specs simply test the application's routes by asserting that the specified URLs route to the specified controller actions. To get the specs to pass, add the appropriate routes to `config/routes.rb`.
 
 > Simple apps with nothing but standard RESTful routes won't get much value from routing specs, but they can provide significant value when used to specify customized routes, like vanity links, slugs, etc.
 
 > They are also valuable for routes that should not be available.
+
+#### Generator
+
+**Note:** There is no generator for routing specs, but they can be generated using other generators (e.g. `rspec:scaffold`)
 
 #### Example
 
@@ -1018,6 +1044,8 @@ expect(get: '/not-a-valid-url').to_not be_routable
 
 ### Scaffold Specs
 
+#### Generator
+
 ```
 rails generate rspec:scaffold NAME [field:type field:type] [options]
 ```
@@ -1027,6 +1055,8 @@ rails generate rspec:scaffold NAME [field:type field:type] [options]
 [System specs documentation](https://relishapp.com/rspec/rspec-rails/docs/system-specs/system-spec)
 
 > Also called **acceptance tests**, **browser tests**, or **end-to-end tests**, system specs test the application from the perspective of a *human client*. The test code walks through a user's browser interactions... and the expectations revolve around page content.
+
+#### Generator
 
 ```
 rails generate rspec:system NAME [options]
@@ -1039,6 +1069,8 @@ rails generate rspec:system NAME [options]
 > Testing the response to your request by asserting the presence of key HTML elements and their content is a common way to test the views of your application.
 
 > Use them to test the content of view templates without invoking a specific controller.
+
+#### Generator
 
 ```
 rails generate rspec:view NAME [action action] [options]
